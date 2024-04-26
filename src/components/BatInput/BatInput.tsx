@@ -1,12 +1,21 @@
 import React from 'react';
-import { View } from 'react-native';
+import {TextInput } from 'react-native';
 
 import { styles } from './BatInputStyle';
 
-export function BatInput() {
-  return (
-    <View style={styles.container}>
 
-    </View>
+interface BatInputProps{
+  pass:string
+}
+
+export function BatInput(props:BatInputProps) {
+  return (
+    
+        <TextInput 
+        multiline={true} 
+        style={styles.inputer} 
+        value={props.pass}
+        placeholder='pass'/>
   );
 }
+
