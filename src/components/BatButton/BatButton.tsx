@@ -3,11 +3,23 @@ import { Button, View, Text, Pressable } from 'react-native';
 import { styles } from './BatButtonStyle';
 import { BatInput } from '../BatInput/BatInput';
 import generatePass from '../../services/passwService';
+import * as Clipboard from 'expo-clipboard';
+
 
 
 
 export function BatButton() {
   const [pass, setPass]=useState('')
+
+
+  function copyButton(){
+    Clipboard.setStringAsync(pass)
+    alert('copiado!')
+  }
+
+
+
+
   function useBatInputG(){
     let generateToken = generatePass()
      setPass (generateToken)
@@ -21,7 +33,8 @@ export function BatButton() {
           onPress={useBatInputG}
           accessibilityLabel='clique para gerar'
         />
-        <Pressable onPress={() => console.log('teclei')}>
+        <Pressable onPress={copyButton}>
+        
           <Text style={styles.copyStyle}>
             📋Copy
           </Text>
