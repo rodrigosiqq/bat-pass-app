@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Button, View, Text, Pressable } from 'react-native';
-
 import { styles } from './BatButtonStyle';
 import { BatInput } from '../BatInput/BatInput';
+import generatePass from '../../services/passwService';
 
 
 
 export function BatButton() {
   const [pass, setPass]=useState('')
   function useBatInputG(){
-    setPass ('eita desgraça do cagaiooooo')
+    let generateToken = generatePass()
+     setPass (generateToken)
   }
   return (
     <>
