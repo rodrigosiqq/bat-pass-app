@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, View, Text, Pressable } from 'react-native';
+import { Button, View, Text, Pressable, Alert } from 'react-native';
 import { styles } from './BatButtonStyle';
 import { BatInput } from '../BatInput/BatInput';
 import generatePass from '../../services/passwService';
@@ -14,7 +14,7 @@ export function BatButton() {
 
   function copyButton(){
     Clipboard.setStringAsync(pass)
-    alert('copiado!')
+    Alert.alert('copiado!')
   }
 
 
